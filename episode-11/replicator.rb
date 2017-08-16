@@ -1,3 +1,5 @@
+require "pry"
+
 class Replicator
 
   # When the Enterprise calls Replicator.new, this method executes.
@@ -40,7 +42,6 @@ class Replicator
   # and then manually execute each method to ensure
   # it returns what's expect.
   def replicate(recipe)
-
     # Setup an instance variable for the recipe
     # so that other methods can see what the recipe is
     @recipe = recipe
@@ -134,7 +135,6 @@ class Replicator
   # This adjusts the temperature of the glass to
   # what the recipes calls for.
   def adjust_temperature
-
     # Abort if there is no glass inside the replicator.
     return unless glass_inside_replicator
 
