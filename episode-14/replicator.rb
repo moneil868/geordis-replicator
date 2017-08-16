@@ -1,3 +1,5 @@
+require 'pry'
+
 class Replicator
 
   # When the Enterprise calls Replicator.new, this method executes.
@@ -44,7 +46,6 @@ class Replicator
     # Setup an instance variable for the recipe
     # so that other methods can see what the recipe is
     @recipe = recipe
-
     # This transports a glass from the cupboard to inside the replicator.
     # If this method is successful, it will return the glass that was
     # transported and @inside_replicator will contain the glass
@@ -59,6 +60,7 @@ class Replicator
     # If this method is successful, it should return
     # the ingredients the recipe has listed, and the glass
     # shoud contain the proper ingredients.
+
 
     # To retrieve the glass from inside the replicator, use:
     #   glass_inside_replicator
@@ -104,10 +106,8 @@ class Replicator
 
   # This transports ingredients into the glass.
   def transport_ingredients_to_glass
-
     # Abort if there is no glass inside the replicator.
     return unless glass_inside_replicator
-
     # Go through recipe and transport each ingredient
     # from pantry to glass, one by one.
     @recipe.ingredients.each do |ingredient_name|
@@ -117,6 +117,7 @@ class Replicator
         glass_inside_replicator.inside
       )
     end
+
   end
 
   # This mixes the ingredients around inside the replicator.
