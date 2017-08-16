@@ -1,3 +1,5 @@
+require 'pry'
+
 class Replicator
 
   # When the Enterprise calls Replicator.new, this method executes.
@@ -40,7 +42,7 @@ class Replicator
   # and then manually execute each method to ensure
   # it returns what's expect.
   def replicate(recipe)
-
+    # binding.pry
     # Setup an instance variable for the recipe
     # so that other methods can see what the recipe is
     @recipe = recipe
@@ -100,6 +102,7 @@ class Replicator
     # and then into the `contents` of that instance, which is an array
     # and obtains the first element of that array.
     @inside_replicator.contents.first
+    # binding.pry
   end
 
   # This transports ingredients into the glass.
@@ -121,7 +124,7 @@ class Replicator
 
   # This mixes the ingredients around inside the replicator.
   def mix
-
+    # binding.pry
     # Abort if there is no glass inside the replicator.
     return unless glass_inside_replicator
 
@@ -129,12 +132,12 @@ class Replicator
     if @power && @enterprise.reactor.draw_power(3)
       glass_inside_replicator.inside.contents.shuffle!.compact!
     end
+
   end
 
   # This adjusts the temperature of the glass to
   # what the recipes calls for.
   def adjust_temperature
-
     # Abort if there is no glass inside the replicator.
     return unless glass_inside_replicator
 
@@ -172,6 +175,7 @@ class Replicator
     transport_glass_from_reactor
 
   end
+
 
   def transport_glass_to_reactor
     @enterprise.transporter.energize(
