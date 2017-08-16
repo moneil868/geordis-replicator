@@ -21,7 +21,6 @@ class Transporter
       to.contents << from.contents.delete(obj)
       return obj
     end
-    binding.pry
   end
 
 end
